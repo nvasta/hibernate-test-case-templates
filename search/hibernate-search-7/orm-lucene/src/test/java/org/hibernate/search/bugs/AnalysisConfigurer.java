@@ -7,7 +7,7 @@ import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
 import org.apache.lucene.analysis.core.WhitespaceTokenizerFactory;
 import org.apache.lucene.analysis.miscellaneous.ASCIIFoldingFilterFactory;
 
-public class YourAnalysisConfigurer implements LuceneAnalysisConfigurer {
+public class AnalysisConfigurer implements LuceneAnalysisConfigurer {
 	@Override
 	public void configure(LuceneAnalysisConfigurationContext context) {
 		context.analyzer( "nameAnalyzer" ).custom()

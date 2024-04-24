@@ -1,34 +1,33 @@
 package org.hibernate.search.bugs;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.DocumentId;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 @Entity
 @Indexed
-public class YourAnnotatedEntity {
+public class AnnotatedEntity extends BaseEntity<Long> {
 
-	@Id
-	@DocumentId
-	private Long id;
-
+//	@Id
+//	@DocumentId
+//	private Long id;
 	@FullTextField(analyzer = "nameAnalyzer")
 	private String name;
 
-	protected YourAnnotatedEntity() {
+	protected AnnotatedEntity() {
 	}
 
-	public YourAnnotatedEntity(Long id, String name) {
+	public AnnotatedEntity(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 
-	public Long getId() {
-		return id;
-	}
+//	public Long getId() {
+//		return id;
+//	}
 
 	public String getName() {
 		return name;
